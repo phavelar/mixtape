@@ -17,7 +17,7 @@ mvn compile assembly:single
 
 1. cd target
 2. copy both mixtape-data.json and changes.json to this folder, otherwise you will need to enter the fullpath or relative path
-to where these files are located in your system.
+to where these files are located in your system. Both json files can be found under __mixtape/src/test/resources__.
 2. java -jar mixtapeApp.jar mixtape-data.json changes.json output.json
 
 ## Design Considerations
