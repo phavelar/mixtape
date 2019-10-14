@@ -83,8 +83,10 @@ For details, please take a look under the domain package.
 The code was mostly done using Test Driven Development (TDD) so, tests should cover most of the code.
 
 ## Future Enhancements/Changes required for scaling the application.
-My presented solution works by reading the entire contents of the mixtape.json in memory, so for a very large file it won't work. For such cases, a better solution is to leverage a document database
-such as MongoDB or CouchDB. The application becomes trivial, just use the database native queries to modify the document. Let the databasee engine deal with replication/concurrency and follow that database best practices.
+My presented solution works by reading the entire contents of the mixtape.json in memory, so for a very large file it won't work. 
+So, I would need to walk the file using streaming APIs, that is read it in chunks and process changes on these chunks, in a way that memory isn't ever an issue.
+For such cases, a better solution is perhaps to leverage a document database, such as MongoDB or CouchDB. The application becomes trivial, just use the database native queries to modify the document. Let the databasee engine deal with replication/concurrency and follow its best practices for scaling needs.
+
 
 
 
