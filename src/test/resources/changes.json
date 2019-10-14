@@ -1,0 +1,35 @@
+{
+  "addSongToPlaylist": [
+    {
+      "songId": "1",
+      "playlistId": "3"
+    },
+    {
+      "songId": "10",
+      "playlistId": "3"
+    }
+  ],
+  "addNewPlaylistToExistingUser": [
+    {
+      "user_id": "2",
+      "song_ids": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "user_id": "3",
+      "song_ids": [
+        "5",
+        "4",
+        "10"
+      ]
+    }
+  ],
+  "removeExistingPlaylist": {
+    "playlistIds": [
+      "1",
+      "2"
+    ]
+  }
+}
