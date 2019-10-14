@@ -31,7 +31,7 @@ addSongToPlayList, addPlaylistToUser, etc. This package also contains ChangesFil
 with the changes.json file parsing.
 * main -> contains the application main function.
 
-### The mixtape-data.json is processed via [Jackson library](https://github.com/FasterXML/jackson), using the data-binding module which allows for mapping json nodes as annotated java POJOs.
+The mixtape-data.json is processed via [Jackson library](https://github.com/FasterXML/jackson), using the data-binding module which allows for mapping json nodes as annotated java POJOs.
 
 ### Changes File
 The changes file has the following syntax:
