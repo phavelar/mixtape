@@ -74,17 +74,17 @@ The changes file has the following syntax:
 ```
 The json structure has nodes that acs as commands followed by a json array acting as datum for each command.
 
-To deal with this more dynamic format, I opted not to use a POJO mapped model, but instead to programatically walk JSON nodes via jackson APIs.
-This supports a very dynamic model for evolving the __changes.json__ file to support other operations on the __mixtape-data__ set, by adding code to support new commands as opposed to deal with an ever evolving domain model.
-For details, please see the __ChangesFileProcessor.java__ for details. 
-The domain model apprach was used to serialize/deserialize the contents of __mixtape.json__ via Jackson Data-binding module, that is one POJO class per JSON node.
+To deal with this more dynamic format, I opted not to use a POJO mapped model, but instead to programmatically walk JSON nodes via jackson APIs.
+This supports a very dynamic model for evolving the __changes.json__ file to support other operations on the __mixtape-data__ set, by adding code to accommodate new commands as opposed to deal with an ever evolving domain model.
+For details, please see the __ChangesFileProcessor.java__  in the source tree. 
+The domain model approach was used to serialize/deserialize the contents of __mixtape.json__ via Jackson Data-binding module, that is one POJO class per JSON node.
 For details, please take a look under the domain package.
 
 The code was mostly done using Test Driven Development (TDD) so, tests should cover most of the code.
 
 ## Future Enhancements/Changes required for scaling the application.
 My presented solution works by reading the entire contents of the mixtape.json in memory, so for a very large file it won't work. 
-So, I would need to walk the file using streaming APIs (similarily as I did with the changes.json file parsing), that is read it in chunks and process changes on these chunks, in a way that memory isn't ever an issue (however for large files it will become a slow process).
+So, I would need to walk the file using streaming APIs (similarly as I did with the changes.json file parsing), that is read it in chunks and process changes on these chunks, in a way that memory isn't ever an issue (however for large files it will become a slow process).
 For such cases, a better solution is perhaps to leverage a document database, such as MongoDB or CouchDB. The application becomes trivial, just use the database native queries to modify the document. Let the database engine deal with replication/concurrency and follow its best practices for scaling needs.
 
 
